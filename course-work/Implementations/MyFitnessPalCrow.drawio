@@ -1,0 +1,104 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram id="crow-foot-model-logging" name="Crow&#39;s Foot Логически Модел (Логване)">
+    <mxGraphModel dx="1426" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Users" value="&lt;b&gt;Users&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | UserID&lt;/u&gt;&lt;br&gt;Name&lt;br&gt;Email&lt;br&gt;Password&lt;br&gt;Age&lt;br&gt;Gender&lt;br&gt;Height&lt;br&gt;Weight&lt;br&gt;JoinDate" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f8cecc;strokeColor=#b85450;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry y="185" width="120" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Workouts" value="&lt;b&gt;Workouts&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | WorkoutID&lt;/u&gt;&lt;br&gt;FK | UserID&lt;br&gt;WorkoutName&lt;br&gt;Date&lt;br&gt;DurationMinutes&lt;br&gt;TotalCaloriesBurned" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#d5e8d4;strokeColor=#82b366;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="220" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Exercises" value="&lt;b&gt;Exercises&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | ExerciseID&lt;/u&gt;&lt;br&gt;Category&lt;br&gt;Name&lt;br&gt;Equipment&lt;br&gt;CaloriesPerMinute" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="770" y="11.5625" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Goals" value="&lt;b&gt;Goals&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | GoalID&lt;/u&gt;&lt;br&gt;FK | UserID&lt;br&gt;Name&lt;br&gt;Category&lt;br&gt;CaloriesTargetPerDay&lt;br&gt;ProteinTargetPerDay" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fff2cc;strokeColor=#d6b656;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="190" width="140" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Meals" value="&lt;b&gt;Meals&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | MealID&lt;/u&gt;&lt;br&gt;FK | UserID&lt;br&gt;Date&lt;br&gt;MealType&lt;br&gt;TotalCalories" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#ffe6cc;strokeColor=#d79b00;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="400" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="Foods" value="&lt;b&gt;Foods&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK | FoodID&lt;/u&gt;&lt;br&gt;Name&lt;br&gt;Category&lt;br&gt;CaloriesPer100g&lt;br&gt;Protein&lt;br&gt;Carbs&lt;br&gt;Fat" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#f5f5f5;strokeColor=#666666;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="770" y="398.28125" width="130" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="WorkoutExercises" value="&lt;b&gt;WorkoutExercises (N:M)&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK, FK | WorkoutID&lt;/u&gt;&lt;br&gt;&lt;u&gt;PK, FK | ExerciseID&lt;/u&gt;&lt;br&gt;Sets&lt;br&gt;Reps&lt;br&gt;Weight" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fcf6e2;strokeColor=#d4c4a4;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="26.5625" width="170" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MealsFoods" value="&lt;b&gt;MealsFoods (N:M)&lt;/b&gt;&lt;hr&gt;&lt;u&gt;PK, FK | MealID&lt;/u&gt;&lt;br&gt;&lt;u&gt;PK, FK | FoodID&lt;/u&gt;&lt;br&gt;QuantityGrams" style="swimlane;fontStyle=4;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=#fcf6e2;strokeColor=#d4c4a4;html=1;container=1;collapsible=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="413.28125" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Users-Workouts" value="logs" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERoneToMany;startArrow=ERone;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="Users" target="Workouts" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="130" y="200" as="sourcePoint" />
+            <mxPoint x="170" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="132" y="221.66666666666666" />
+              <mxPoint x="208" y="85" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Workouts-WorkoutExercises" value="includes" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="Workouts" target="WorkoutExercises" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="330" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="392" y="85" />
+              <mxPoint x="468" y="86.5625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WorkoutExercises-Exercises" value="" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERone;startArrow=ERmany;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="WorkoutExercises" target="Exercises" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="670" y="200" as="sourcePoint" />
+            <mxPoint x="690" y="200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="682" y="86.5625" />
+              <mxPoint x="758" y="86.5625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Users-Goals" value="sets" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#000000;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="Users" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="60" y="380" as="sourcePoint" />
+            <mxPoint x="410" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="134" y="280" />
+              <mxPoint x="208" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Users-Meals" value="logs" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="Users" target="Meals" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="130" y="475" as="sourcePoint" />
+            <mxPoint x="250" y="475" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="132" y="348.3333333333333" />
+              <mxPoint x="208" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Meals-MealsFoods" value="contains" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERmany;startArrow=ERone;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="Meals" target="MealsFoods" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="370" y="480" as="sourcePoint" />
+            <mxPoint x="480" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="392" y="475" />
+              <mxPoint x="468" y="473.28125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MealsFoods-Foods" value="" style="edgeStyle=entityRelationEdgeStyle;html=1;endArrow=ERone;startArrow=ERmany;strokeColor=#000000;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;noEdgeStyle=1;orthogonal=1;" parent="1" source="MealsFoods" target="Foods" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="670" y="480" as="sourcePoint" />
+            <mxPoint x="690" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="682" y="473.28125" />
+              <mxPoint x="758" y="473.28125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
