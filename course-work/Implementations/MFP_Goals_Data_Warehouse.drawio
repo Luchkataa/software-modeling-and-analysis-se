@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="Goal Progress DW UML" id="GoalProgressDW">
+    <mxGraphModel dx="1426" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" value="Dim_User&lt;div&gt;--------------------------&lt;div&gt;PK  SK_user_id : INT NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;name : VARCHAR(100) NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;age : INT&amp;nbsp;&lt;/div&gt;&lt;div&gt;weight : FLOAT&amp;nbsp;&lt;/div&gt;&lt;div&gt;height : FLOAT&lt;/div&gt;&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;align=left;verticalAlign=top;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="150" y="220" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="goal" value="Dim_Goal&lt;div&gt;&amp;nbsp;--------------------------&lt;div&gt;PK  SK_goal_id : INT NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;goal_name : VARCHAR(100) NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;goal_type : VARCHAR(50)&amp;nbsp;&lt;/div&gt;&lt;div&gt;target_calories : INT&amp;nbsp;&lt;/div&gt;&lt;div&gt;target_duration : INT&lt;/div&gt;&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;align=left;verticalAlign=top;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="870" y="220" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="date" value="Dim_Date&lt;div&gt;--------------------------&amp;nbsp;&lt;/div&gt;&lt;div&gt;PK&amp;nbsp; SK_date_id : INT NOT NULL&lt;/div&gt;&lt;div&gt;date : DATE NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;day : INT&lt;/div&gt;&lt;div&gt;month : INT&lt;/div&gt;&lt;div&gt;year : INT&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;align=left;verticalAlign=top;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="100" y="700" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="fact" value="Fact_GoalProgress&lt;div&gt;--------------------------&amp;nbsp;&lt;div&gt;PK  SK_progress_id : INT NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;FK  user_id : INT NOT NULL&lt;/div&gt;&lt;div&gt;FK  goal_id : INT NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;FK  date_id : INT NOT NULL&amp;nbsp;&lt;/div&gt;&lt;div&gt;calories_consumed : INT&lt;/div&gt;&lt;div&gt;calories_burned : INT&lt;/div&gt;&lt;div&gt;net_calories : INT&lt;/div&gt;&lt;div&gt;goal_achieved : BIT&lt;/div&gt;&lt;/div&gt;" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;align=left;verticalAlign=top;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="400" width="280" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="rel1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=classic;" parent="1" source="fact" target="user" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=classic;" parent="1" source="fact" target="goal" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=classic;" parent="1" source="fact" target="date" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
